@@ -1,6 +1,6 @@
 import './index.css';
 
-import { input, btn, numberCard, span } from './components/constans.js';
+import { input, btn, numberCard, span, numbersMir, images } from './components/constans.js';
 
 const checkLuhn = (numbers) => {
     const num = numbers;
@@ -28,19 +28,24 @@ const checkNumbersCard = (numbers) => {
     Array.from(numbers).forEach((element) => {
         items.push(element);
     });
-
-    // for (let i = 0; i > items.length; i++) {
-    //     console.log(items[i]);
-    // }
 }
 
 input.addEventListener('input', (e) => {
     const numbers = span.innerHTML = e.target.value;
 
+    if(numbers === numbersMir) {
+        images.forEach(element => {
+            element.classList.add('negative-scale');
+        });
+        
+        images[5].classList.add('scale');
+    }
+
     if (numbers.length <= 0) {
         console.log('Не очень');
     }
     else if (checkLuhn(numbers)) {
+        clickButton();
         console.log('Всё хорошо');
     }
     else {
@@ -49,3 +54,9 @@ input.addEventListener('input', (e) => {
 
     checkNumbersCard(numbers);
 });
+
+const clickButton = () => {
+    btn.addEventListener('click', () => {
+        input.classList.add('input__field_successful-check');
+    });
+}

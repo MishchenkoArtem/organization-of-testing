@@ -10,15 +10,15 @@
 
 <body>
     <div class="container">
-        <img class="images" src="<%=require('./images/visa.png')%>" alt="Виза">
-        <img class="images" src="<%=require('./images/master-card.png')%>" alt="Мастер Кард">
-        <img class="images" src="<%=require('./images/amex.png')%>" alt="Американ Экспрес">
-        <img class="images" src="<%=require('./images/discover.png')%>" alt="Дэсковер">
-        <img class="images" src="<%=require('./images/maestro.png')%>" alt="Маэстро">
-        <img class="images" src="<%=require('./images/mir.png')%>" alt="Мир">
+        <img class="images" src="./images/visa.png" alt="Виза">
+        <img class="images" src="./images/master-card.png" alt="Мастер Кард">
+        <img class="images" src="./images/amex.png" alt="Американ Экспрес">
+        <img class="images" src="./images/discover.png" alt="Дэсковер">
+        <img class="images" src="./images/maestro.png" alt="Маэстро">
+        <img class="images" src="./images/mir.png" alt="Мир">
     </div>
     <label class="input__container">
-        <input class="input__field" type="text" placeholder="Введите номер карты" maxlength="16">
+        <input class="input__field" type="text" placeholder="Введите номер карты" minlength="16" maxlength="16">
         <span class="input__span"></span>
         <button class="input__button" type="button">Click to Validate</button>
     </label>

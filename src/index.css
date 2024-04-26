@@ -9,7 +9,13 @@ body {
     padding: 0 5px;
 }
 
-.scale:hover {
+.negative-scale {
+    transition: 1s;
+    display: none;
+}
+
+.scale {
+    display: flex;
     transition: 1s;
     transform: scale(1.5);
 }
@@ -35,6 +41,22 @@ body {
     border-radius: 7px;
 }
 
+.input__field_successful-check {
+    background-color: cadetblue;
+    color: white;
+    
+    border: solid black 1px;
+    border-radius: 7px;
+}
+
+.input__field_verification-failed {
+    background-color: cadetblue;
+    color: white;
+    
+    border: solid black 1px;
+    border-radius: 7px;
+}
+
 .input__span {
     display: none;
 }
@@ -47,4 +69,6 @@ body {
 
     border: solid cadetblue 1px;
     border-radius: 7px;
+
+    color: white;
 }
