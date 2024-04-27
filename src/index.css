@@ -1,13 +1,10 @@
-body {
-    margin: 100px 0 0;
-}
-
-.images {
-    max-width: 100px;
-    max-height: 100px;
-
-    padding: 0 5px;
-}
+@import url(./blocks/body/body.css);
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/cards/__image/cards__image.css);
+@import url(./blocks/field/field.css);
+@import url(./blocks/field/__input/field__input.css);
+@import url(./blocks/field/__invisible-text/field__invisible-text.css);
+@import url(./blocks/field/__button/field__button.css);
 
 .negative-scale {
     transition: 1s;
@@ -18,27 +15,6 @@ body {
     display: flex;
     transition: 1s;
     transform: scale(1.5);
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.input__container{
-    display: flex;
-    justify-content: center;
-
-    padding-top: 30px;
-}
-
-.input__field {
-    padding: 10px;
-    width: 300px;
-
-    border: solid cadetblue 1px;
-    border-radius: 7px;
 }
 
 .input__field_successful-check {
@@ -55,20 +31,4 @@ body {
     
     border: solid black 1px;
     border-radius: 7px;
-}
-
-.input__span {
-    display: none;
-}
-
-.input__button {
-    margin-left: 10px;
-    padding: 0 15px;
-
-    background-color: cadetblue;
-
-    border: solid cadetblue 1px;
-    border-radius: 7px;
-
-    color: white;
 }

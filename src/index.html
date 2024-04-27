@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div class="container">
-        <img class="images" src="./images/visa.png" alt="Виза">
-        <img class="images" src="./images/master-card.png" alt="Мастер Кард">
-        <img class="images" src="./images/amex.png" alt="Американ Экспрес">
-        <img class="images" src="./images/discover.png" alt="Дэсковер">
-        <img class="images" src="./images/maestro.png" alt="Маэстро">
-        <img class="images" src="./images/mir.png" alt="Мир">
+  <body class="body">
+    <div class="cards">
+      <img class="cards__image" src="./images/visa.png" alt="Виза" />
+      <img
+        class="cards__image"
+        src="./images/master-card.png"
+        alt="Мастер Кард"
+      />
+      <img
+        class="cards__image"
+        src="./images/amex.png"
+        alt="Американ Экспрес"
+      />
+      <img class="cards__image" src="./images/discover.png" alt="Дэсковер" />
+      <img class="cards__image" src="./images/maestro.png" alt="Маэстро" />
+      <img class="cards__image" src="./images/mir.png" alt="Мир" />
     </div>
-    <label class="input__container">
-        <input class="input__field" type="text" placeholder="Введите номер карты" minlength="16" maxlength="16">
-        <span class="input__span"></span>
-        <button class="input__button" type="button">Click to Validate</button>
+    <label class="field">
+      <input
+        class="field__input"
+        type="text"
+        placeholder="Введите номер карты"
+        minlength="16"
+        maxlength="16"
+      />
+      <span class="field__invisible-text"></span>
+      <button class="field__button" type="button">Click to Validate</button>
     </label>
-</body>
-
+  </body>
 </html>
