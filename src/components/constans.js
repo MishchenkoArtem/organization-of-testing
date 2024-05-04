@@ -1,6 +1,22 @@
-export const input = document.querySelector(".input__field");
-export const span = document.querySelector(".input__span");
-export const btn = document.querySelector(".input__button");
+export const input = document.querySelector(".field__input");
+export const span = document.querySelector(".field__invisible-text");
+export const btn = document.querySelector(".field__button");
 export const images = document.querySelectorAll(".cards__image");
 
-export const numbersMir = "2202";
+export const numbersMaestro = [
+  "50",
+  "56",
+  "57",
+  "58",
+  "59",
+  "60",
+  "61",
+  "62",
+  "63",
+  "64",
+  "65",
+  "66",
+  "67",
+  "68",
+  "69",
+];

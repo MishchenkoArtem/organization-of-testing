@@ -7,7 +7,7 @@
 @import url(./blocks/field/__button/field__button.css);
 
 .negative-scale {
-    transition: 1s;
+    transition: .9s;
     display: none;
 }
 
