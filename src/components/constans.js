@@ -2,6 +2,7 @@ export const input = document.querySelector(".field__input");
 export const span = document.querySelector(".field__invisible-text");
 export const btn = document.querySelector(".field__button");
 export const images = document.querySelectorAll(".cards__image");
+export const cardMaestro = document.querySelector('#card-maestro');
 
 export const numbersMaestro = [
   "50",
