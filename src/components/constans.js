@@ -21,3 +21,6 @@ export const numbersMaestro = [
   "68",
   "69",
 ];
+
+export const numberVisa = ['4026', '417500', '4508', '4844', '4913', '4917'];
+export const numberMasterCard = ['51','52','53','54','55'];
