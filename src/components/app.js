@@ -23,7 +23,7 @@ input.addEventListener("input", (e) => {
     });
 
     img.classList.add("scale");
-  };
+  }
 
   if (findNumbers(numbersMaestro)) {
     changeImages(cardMaestro);
