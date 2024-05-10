@@ -5,17 +5,8 @@
 @import url(./blocks/field/__input/field__input.css);
 @import url(./blocks/field/__invisible-text/field__invisible-text.css);
 @import url(./blocks/field/__button/field__button.css);
-
-.negative-scale {
-    transition: .9s;
-    display: none;
-}
-
-.scale {
-    display: flex;
-    transition: 1s;
-    transform: scale(1.5);
-}
+@import url(./blocks/hiding-objects/hiding-objects.css);
+@import url(./blocks/card-xl/card-xl.css);
 
 .input__field_successful-check {
     background-color: cadetblue;

@@ -4,7 +4,17 @@ import {
   span,
   images,
   numbersMaestro,
+  numberVisa,
+  numberMasterCard,
+  numberAmericanExpress,
+  numberDiscover,
+  numberMir,
   cardMaestro,
+  cardVisa,
+  cardMaster,
+  cardAmericanExpress,
+  cardDiscover,
+  cardMir
 } from "./constans.js";
 import { checkLuhn } from "./luhnAlgorithm.js";
 import { addNumbers } from "./addNumber.js";
@@ -17,62 +27,29 @@ input.addEventListener("input", (e) => {
     return number;
   };
 
-  const changeImages = (img) => {
+  const changeImages = (card) => {
     images.forEach((item) => {
-      item.classList.add("negative-scale");
+      item.classList.add("hiding-objects");
     });
 
-    img.classList.add("scale");
-  }
+    card.classList.add("card-xl");
+  };
 
   if (findNumbers(numbersMaestro)) {
     changeImages(cardMaestro);
-  }
-
-  // --- Проверка карты "Мир"
-  if (numbers === "22") {
+  } else if (numbers === "4" || findNumbers(numberVisa)) {
+    changeImages(cardVisa);
+  } else if (findNumbers(numberMasterCard)) {
+    changeImages(cardMaster);
+  } else if (findNumbers(numberAmericanExpress)) {
+    changeImages(cardAmericanExpress);
+  } else if (findNumbers(numberDiscover)) {
+    changeImages(cardDiscover);
+  } else if (findNumbers(numberMir)) {
+    changeImages(cardMir);
+  } else {
     images.forEach((element) => {
-      element.classList.add("negative-scale");
-    });
-
-    images[5].classList.add("scale");
-  }
-  // --- Проверка карты "Visa"
-  else if (numbers === "4") {
-    images.forEach((element) => {
-      element.classList.add("negative-scale");
-    });
-
-    images[0].classList.add("scale");
-  }
-  // --- Проверка карты "Master Card"
-  else if (numbers === "5") {
-    images.forEach((element) => {
-      element.classList.add("negative-scale");
-    });
-
-    images[1].classList.add("scale");
-  }
-  // --- Проверка карты "American Express"
-  else if (numbers === "3") {
-    images.forEach((element) => {
-      element.classList.add("negative-scale");
-    });
-
-    images[2].classList.add("scale");
-  }
-  // --- Проверка карты "Dicscover"
-    // else if (numbers === "6") {
-    //   images.forEach((element) => {
-    //     element.classList.add("negative-scale");
-    //   });
-
-    //   images[3].classList.add("scale");
-    // }
-  // --- Проверка на несоответствие, сброс к начальному состоянию
-  else {
-    images.forEach((element) => {
-      element.classList.remove("negative-scale", "scale");
+      element.classList.remove("hiding-objects", "card-xl");
     });
   }
 
