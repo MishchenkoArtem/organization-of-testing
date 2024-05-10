@@ -1,0 +1,6 @@
+.verification-failed {
+  background-color: red;
+
+  border: solid black 1px;
+  border-radius: 7px;
+}

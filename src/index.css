@@ -7,19 +7,5 @@
 @import url(./blocks/field/__button/field__button.css);
 @import url(./blocks/hiding-objects/hiding-objects.css);
 @import url(./blocks/card-xl/card-xl.css);
-
-.input__field_successful-check {
-    background-color: cadetblue;
-    color: white;
-    
-    border: solid black 1px;
-    border-radius: 7px;
-}
-
-.input__field_verification-failed {
-    background-color: cadetblue;
-    color: white;
-    
-    border: solid black 1px;
-    border-radius: 7px;
-}
+@import url(./blocks/successful-check/successful-check.css);
+@import url(./blocks/verification-failed/verification-failed.css);

@@ -14,19 +14,20 @@ import {
   cardMaster,
   cardAmericanExpress,
   cardDiscover,
-  cardMir
+  cardMir,
 } from "./constans.js";
 import { checkLuhn } from "./luhnAlgorithm.js";
-import { addNumbers } from "./addNumber.js";
 
 input.addEventListener("input", (e) => {
   const numbers = (span.innerHTML = e.target.value);
 
+  // --- Проверка ввода с номерами карты
   const findNumbers = (item) => {
     const number = item.find((element) => element === numbers);
     return number;
   };
 
+  // --- Увиличение изображения лого карты
   const changeImages = (card) => {
     images.forEach((item) => {
       item.classList.add("hiding-objects");
@@ -35,38 +36,55 @@ input.addEventListener("input", (e) => {
     card.classList.add("card-xl");
   };
 
+  // --- Проверка карты "Маестро"
   if (findNumbers(numbersMaestro)) {
     changeImages(cardMaestro);
-  } else if (numbers === "4" || findNumbers(numberVisa)) {
+  }
+  // --- Проверка карты "Виза"
+  else if (numbers === "4" || findNumbers(numberVisa)) {
     changeImages(cardVisa);
-  } else if (findNumbers(numberMasterCard)) {
+  }
+  // --- Проверка карты "Мастер Кадр"
+  else if (findNumbers(numberMasterCard)) {
     changeImages(cardMaster);
-  } else if (findNumbers(numberAmericanExpress)) {
+  }
+  // --- Проверка карты "Америка экспресс"
+  else if (findNumbers(numberAmericanExpress)) {
     changeImages(cardAmericanExpress);
-  } else if (findNumbers(numberDiscover)) {
+  }
+  // --- Проверка карты "Дисковер"
+  else if (findNumbers(numberDiscover)) {
     changeImages(cardDiscover);
-  } else if (findNumbers(numberMir)) {
+  }
+  // --- Проверка карты "Мир"
+  else if (findNumbers(numberMir)) {
     changeImages(cardMir);
-  } else {
+  }
+  // --- Если проверка не прошла
+  else {
     images.forEach((element) => {
       element.classList.remove("hiding-objects", "card-xl");
     });
   }
 
-  if (numbers.length <= 0) {
-    console.log("Не очень");
-  } else if (checkLuhn(numbers)) {
-    clickButton();
-    console.log("Всё хорошо");
-  } else {
-    console.log("Не очень");
+  const enabledButton = () => {
+    btn.style = "opacity: 1;";
+    btn.disabled = false;
+    input.classList.add("successful-check");
   }
 
-  addNumbers(numbers);
-});
+  const disabledButton = () => {
+    btn.style = "opacity: .5;";
+    btn.disabled = true;
+    input.classList.remove("successful-check");
+  }
 
-const clickButton = () => {
-  btn.addEventListener("click", () => {
-    input.classList.add("input__field_successful-check");
-  });
-};
+  if (numbers.length >= 16) {
+    if (checkLuhn(numbers)) {
+      btn.addEventListener("click", enabledButton);
+    }
+  } else if (numbers.length < 16) {
+    disabledButton();
+    btn.removeEventListener("click", enabledButton);
+  }
+});
