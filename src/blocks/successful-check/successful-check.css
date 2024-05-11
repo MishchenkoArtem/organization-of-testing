@@ -1,5 +1,6 @@
 .successful-check {
-  background-color: rgb(104, 215, 127);
+  background-color: green;
+  color: white;
 
   border: solid black 1px;
   border-radius: 7px;

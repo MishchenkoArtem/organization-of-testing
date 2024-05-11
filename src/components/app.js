@@ -67,24 +67,23 @@ input.addEventListener("input", (e) => {
     });
   }
 
-  const enabledButton = () => {
-    btn.style = "opacity: 1;";
-    btn.disabled = false;
-    input.classList.add("successful-check");
-  }
-
-  const disabledButton = () => {
-    btn.style = "opacity: .5;";
-    btn.disabled = true;
-    input.classList.remove("successful-check");
-  }
-
+  // --- Кнопка активна если номер введен корректно
   if (numbers.length >= 16) {
     if (checkLuhn(numbers)) {
-      btn.addEventListener("click", enabledButton);
+      btn.disabled = false;
+      btn.classList.add("field__button_btn_active");
+      btn.addEventListener("click", () => {
+        input.classList.add("successful-check");
+      });
     }
-  } else if (numbers.length < 16) {
-    disabledButton();
-    btn.removeEventListener("click", enabledButton);
+  } 
+  // --- Кнопка не активна если номер введен не корректно
+  else {
+    btn.disabled = true;
+    btn.classList.remove("field__button_btn_active");
+    input.classList.remove("successful-check");
+    btn.removeEventListener("click", () => {
+      input.classList.add("successful-check");
+    });
   }
 });
