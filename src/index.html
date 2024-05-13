@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
 
-  <body class="body">
-    <div class="cards">
-      <img class="cards__image" id="card-visa" src="./images/visa.png" alt="Виза" />
-      <img
-        class="cards__image"
-        id="master-card"
-        src="./images/master-card.png"
-        alt="Мастер Кард"
-      />
-      <img
-        class="cards__image"
-        id="american-express"
-        src="./images/amex.png"
-        alt="Американ Экспрес"
-      />
-      <img class="cards__image" id="discover" src="./images/discover.png" alt="Дэсковер" />
-      <img class="cards__image" id="card-maestro" src="./images/maestro.png" alt="Маэстро" />
-      <img class="cards__image" id="mir" src="./images/mir.png" alt="Мир" />
-    </div>
-    <label class="field">
-      <input
-        class="field__input"
-        type="text"
-        placeholder="Введите номер карты"
-        minlength="16"
-        maxlength="19"
-      />
-      <span class="field__invisible-text"></span>
-      <button class="field__button" type="button" disabled>Click to Validate</button>
-    </label>
-  </body>
+    <body class="body">
+        <div class="cards">
+            <img
+                class="cards__image"
+                id="card-visa"
+                src="./images/visa.png"
+                alt="Виза"
+            />
+            <img
+                class="cards__image"
+                id="master-card"
+                src="./images/master-card.png"
+                alt="Мастер Кард"
+            />
+            <img
+                class="cards__image"
+                id="american-express"
+                src="./images/amex.png"
+                alt="Американ Экспрес"
+            />
+            <img
+                class="cards__image"
+                id="discover"
+                src="./images/discover.png"
+                alt="Дэсковер"
+            />
+            <img
+                class="cards__image"
+                id="card-maestro"
+                src="./images/maestro.png"
+                alt="Маэстро"
+            />
+            <img
+                class="cards__image"
+                id="mir"
+                src="./images/mir.png"
+                alt="Мир"
+            />
+        </div>
+        <label class="field">
+            <input
+                class="field__input"
+                type="text"
+                placeholder="Введите номер карты"
+                minlength="16"
+                maxlength="19"
+            />
+            <span class="field__invisible-text"></span>
+            <button class="field__button" type="button" disabled>
+                Click to Validate
+            </button>
+        </label>
+    </body>
 </html>
