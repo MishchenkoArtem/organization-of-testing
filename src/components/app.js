@@ -36,34 +36,39 @@ input.addEventListener("input", (e) => {
         card.classList.add("card-xl");
     };
 
-    // --- Проверка карты "Маестро"
+    
     if (findNumbers(numbersMaestro)) {
         changeImages(cardMaestro);
-    }
-    // --- Проверка карты "Виза"
+    } 
     else if (numbers === "4" || findNumbers(numberVisa)) {
         changeImages(cardVisa);
-    }
-    // --- Проверка карты "Мастер Кадр"
+    } 
     else if (findNumbers(numberMasterCard)) {
         changeImages(cardMaster);
-    }
-    // --- Проверка карты "Америка экспресс"
+    } 
     else if (findNumbers(numberAmericanExpress)) {
         changeImages(cardAmericanExpress);
-    }
-    // --- Проверка карты "Дисковер"
+    } 
     else if (findNumbers(numberDiscover)) {
         changeImages(cardDiscover);
-    }
-    // --- Проверка карты "Мир"
+    } 
     else if (findNumbers(numberMir)) {
-        changeImages(cardMir);
-    }
-    // --- Если проверка не прошла
+            changeImages(cardMir);
+        }
     else {
         images.forEach((element) => {
             element.classList.remove("hiding-objects", "card-xl");
+        });
+    }
+
+    const buttonClick = () => {
+        btn.addEventListener("click", () => {
+            input.classList.add("successful-check");
+        });
+        input.addEventListener("keyup", (e) => {
+            if (e.code === "Enter") {
+                input.classList.add("successful-check");
+            }
         });
     }
 
@@ -72,9 +77,7 @@ input.addEventListener("input", (e) => {
         if (checkLuhn(numbers)) {
             btn.disabled = false;
             btn.classList.add("field__button_btn_active");
-            btn.addEventListener("click", () => {
-                input.classList.add("successful-check");
-            });
+            buttonClick();
         }
     }
     // --- Кнопка не активна если номер введен не корректно
@@ -82,8 +85,5 @@ input.addEventListener("input", (e) => {
         btn.disabled = true;
         btn.classList.remove("field__button_btn_active");
         input.classList.remove("successful-check");
-        btn.removeEventListener("click", () => {
-            input.classList.add("successful-check");
-        });
     }
 });
